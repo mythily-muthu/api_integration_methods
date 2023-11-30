@@ -13,7 +13,7 @@ function App() {
   const getAllUsers = async () => {
     let res = await axios.get(url);
     setUsers(res.data);
-    console.log("response:", res.data);
+    // console.log(":", res.data);
   };
   useEffect(() => {
     getAllUsers();
@@ -30,13 +30,19 @@ function App() {
 
       // step 2 : make an axios post req (url , datas)
       let res = await axios.post(url, userData);
+      console.log("current users:", users);
+
+      // setUsers([...users, res.data]);
+      setUsers((prevUsers) => [...prevUsers, res.data]);
       console.log("user added :", res.data);
-      getAllUsers();
+      await getAllUsers();
+      console.log("updated users:", users);
 
       // step 3 : clear the input fields
       setName("");
       setEmail("");
       setWebsite("");
+      
     } catch (error) {
       // step 4 : handle errors
       console.log("error in adding user:", error);
@@ -69,7 +75,7 @@ function App() {
               <td className="">
                 <button className="mr-3 bg-blue-500 text-white py-1 px-2 rounded-md text-sm cursor-pointer">
                   UPDATE
-                </button>{" "}
+                </button>
                 <button className="mr-3 bg-red-500 text-white p-1 px-2 rounded-md text-sm cursor-pointer">
                   DELETE
                 </button>
@@ -78,11 +84,10 @@ function App() {
           ))}
         </tbody>
 
-        <tfoot className=" ">
+        <tfoot className="">
           <tr className="py-5 w-full p-1 ">
             <td></td>
             <td>
-              {" "}
               <input
                 className="border-2 border-orange-700 p-2 w-[300px]"
                 placeholder="Enter name "
