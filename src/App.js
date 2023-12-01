@@ -42,7 +42,6 @@ function App() {
       setName("");
       setEmail("");
       setWebsite("");
-      
     } catch (error) {
       // step 4 : handle errors
       console.log("error in adding user:", error);
@@ -99,7 +98,7 @@ function App() {
               {" "}
               <input
                 placeholder="Enter email "
-                className="border-2 border-orange-700  p-2 w-[300px]"
+                className="border-2 border-orange-700  p-2 w-[310px]"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
