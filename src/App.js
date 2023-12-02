@@ -89,7 +89,7 @@ function App() {
             <td>
               <input
                 className="border-2 border-orange-700 p-2 w-[300px]"
-                placeholder="Enter name "
+                placeholder="Enter name... "
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
@@ -97,7 +97,7 @@ function App() {
             <td>
               {" "}
               <input
-                placeholder="Enter email "
+                placeholder="Enter email... "
                 className="border-2 border-orange-700  p-2 w-[310px]"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -106,7 +106,7 @@ function App() {
             <td>
               {" "}
               <input
-                placeholder="Enter website"
+                placeholder="Enter website..."
                 className="border-2 border-orange-700  p-2 w-[300px]"
                 value={website}
                 onChange={(e) => setWebsite(e.target.value)}
