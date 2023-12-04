@@ -106,7 +106,7 @@ function App() {
             <td>
               {" "}
               <input
-                placeholder="Enter website..."
+                placeholder="Enter website.."
                 className="border-2 border-orange-700  p-2 w-[300px]"
                 value={website}
                 onChange={(e) => setWebsite(e.target.value)}
